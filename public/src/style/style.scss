@@ -1,0 +1,23 @@
+@import './config/reset.scss';
+@import './partials/product.scss';
+@import './partials/monitor.scss';
+@import './partials/wallet.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 50px;
+}
+
+.container {
+  display: flex;
+  height: 500px;
+}
+
+.vending-machine {
+  display: flex;
+  border: 3px solid black;
+  margin-right: 20px;
+}

@@ -1,0 +1,33 @@
+{
+  "name": "fe-w7-vm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node-sass public/src/style/style.scss public/src/style/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skawnkk/fe-w7-vm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skawnkk/fe-w7-vm/issues"
+  },
+  "homepage": "https://github.com/skawnkk/fe-w7-vm#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.27.1",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "core-js": "^3.9.1",
+    "node-sass": "^5.0.0"
+  }
+}

@@ -1,0 +1,22 @@
+.products {
+  display: grid;
+  border: 1px solid black;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 20px;
+  align-items: center;
+  .product-item {
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    margin-right: 10px;
+    border: 1px solid black;
+    .product-item__title {
+      border-bottom: 1px solid black;
+      line-height: 40px;
+      height: 40px;
+    }
+    .product-item__price {
+      line-height: 30px;
+    }
+  }
+}

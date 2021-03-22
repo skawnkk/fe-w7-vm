@@ -1,0 +1,38 @@
+.wallet {
+  border: 1px solid black;
+  height: 500px;
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & div {
+    border-radius: 5px;
+  }
+  & > div {
+    display: flex;
+    padding: 10px;
+    .wallet__money-type {
+      text-align: center;
+      line-height: 30px;
+      width: 50px;
+      height: 30px;
+      margin-right: 10px;
+      border: 1px solid black;
+    }
+    .wallet__type-count {
+      text-align: center;
+      line-height: 30px;
+      width: 50px;
+      height: 30px;
+      border: 1px solid black;
+    }
+  }
+  .wallet__total-money {
+    padding: 0;
+    width: 110px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid black;
+  }
+}
