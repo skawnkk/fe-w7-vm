@@ -195,7 +195,7 @@ input {
     .wallet > div .wallet__money-type {
       text-align: center;
       line-height: 30px;
-      width: 50px;
+      width: 70px;
       height: 30px;
       margin-right: 10px;
       border: 1px solid black; }
@@ -212,6 +212,10 @@ input {
     text-align: center;
     line-height: 40px;
     border: 1px solid black; }
+
+.disabled {
+  background-color: rgba(0, 0, 0, 0.3);
+  pointer-events: none; }
 
 * {
   box-sizing: border-box; }
