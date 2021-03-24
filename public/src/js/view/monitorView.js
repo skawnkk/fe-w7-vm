@@ -22,7 +22,7 @@ class MonitorView {
     //vending machine에 vending 옵저버에 subscribe - vendingClickCbFn
   }
   addEvent() {
-    this.monitorBtn.addEventListener('click', this.handleClick.bind(this));
+    _.addEvent(this.monitorBtn,'click', this.handleClick.bind(this));
   }
   render() {
     this.renderVendingMoney();

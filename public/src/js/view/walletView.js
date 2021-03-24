@@ -14,7 +14,7 @@ class WalletView {
     this.walletModel.subscribe(this.walletClickCbFn.bind(this))
   }
   addEvent() {
-    this.walletArea.addEventListener('click', this.handleClick.bind(this))
+    _.addEvent(this.walletArea,'click', this.handleClick.bind(this));
   }
   handleClick({ target }) {
     if (!this.isMoneyBtn(target)) return;
