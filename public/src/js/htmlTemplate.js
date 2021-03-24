@@ -51,9 +51,11 @@ export const getMonitorMoneyHTML = (price) =>
 export const getMonitorStatusHTML = (status) =>
   makeDiv({ value: status, classes: ['monitor-status__line'] });
 
-export const getProductHTML = (productName, productPrice) => {
+export const getProductHTML = (productName, productPrice, productStock) => {
   const product = makeDiv({ value: productName, classes: ['product-item__title'] });
   const price = makeDiv({ value: productPrice, classes: ['product-item__price'] });
   const productInfomation = product + price;
-  return makeDiv({ value: productInfomation, classes: ['product-item'] });
+  if (productStock === 0)
+    return makeDiv({ value: productInfomation, classes: ['product-item', 'unchoiceable'] });
+  else return makeDiv({ value: productInfomation, classes: ['product-item'] });
 };

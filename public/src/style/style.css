@@ -149,6 +149,8 @@ input {
       line-height: 30px; }
     .products .product-item.choiceable {
       border: 2px solid red; }
+    .products .product-item.unchoiceable {
+      background-color: rgba(0, 0, 0, 0.3); }
 
 .monitor {
   border: 1px solid black;
