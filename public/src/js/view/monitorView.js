@@ -1,6 +1,6 @@
 import { getMonitorMoneyHTML, getMonitorStatusHTML } from '../htmlTemplate';
 import WalletModel from '../model/walletModel';
-import { _ } from '../util/util';
+import { _ } from '../util/util.js';
 
 class MonitorView {
   constructor({ walletModel, vendingModel }) {

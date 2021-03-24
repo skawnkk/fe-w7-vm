@@ -10,4 +10,4 @@ const vendingModel = new VendingModel(beverage)
 
 const monitorView = new MonitorView({ walletModel, vendingModel })
 const productView = new ProductView(walletModel, vendingModel)
-const walletView = new WalletView(walletModel, vendingModel)
+const walletView = new WalletView({walletModel, vendingModel})

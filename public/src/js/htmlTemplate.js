@@ -1,12 +1,11 @@
-import {
-   createDom
-} from './utill';
-
+import { createDom } from './util/util.js';
 export const walletStatus = () => {
    makeDiv(renderWallet)
 }
 
 const makeDiv = createDom('div')
+const makeSpan = createDom('span');
+
 export const renderWalletTpl = (moneyType, count) => {
    if (count === 0) {
       const walletMoney = makeDiv({
@@ -43,3 +42,10 @@ export const totalWalletTpl = (totalPrice) => {
       classes: ['wallet__total-money']
    })
 }
+
+
+export const getMonitorMoneyHTML = (price) =>
+  makeSpan({ value: price, classes: ['monitor-money__price'] }) + makeSpan({ value: '원' });
+
+export const getMonitorStatusHTML = (status) =>
+  makeDiv({ value: status, classes: ['monitor-status__line'] });
