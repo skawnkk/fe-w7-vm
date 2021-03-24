@@ -11,3 +11,4 @@ export const createDom = (tag) => ({
       classes = []
    } = {}) =>
    `<${tag} class='${classes.join(' ')}'>${value}</${tag}>`;
+   

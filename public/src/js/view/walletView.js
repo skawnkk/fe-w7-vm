@@ -17,10 +17,10 @@ class WalletView {
     this.walletArea.addEventListener('click', this.handleClick.bind(this))
   }
   handleClick({ target }) {
-    if (this.isMoneyBtn(target)) {
-      const money = this.getPriceFromTarget(target)
-      this.walletModel.notify(money)
-    }
+    if (!this.isMoneyBtn(target)) return;
+    const money = this.getPriceFromTarget(target)
+    this.walletModel.notify(money)
+    
   }
   getPriceFromTarget(target) {
     return target.innerText.slice(0, -1) * 1
