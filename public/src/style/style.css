@@ -147,6 +147,8 @@ input {
       height: 40px; }
     .products .product-item .product-item__price {
       line-height: 30px; }
+    .products .product-item.choiceable {
+      border: 2px solid red; }
 
 .monitor {
   border: 1px solid black;
