@@ -3,42 +3,42 @@ import {
 } from './utill';
 
 export const walletStatus = () => {
-   div(renderWallet)
+   makeDiv(renderWallet)
 }
 
-const div = createDom('div')
+const makeDiv = createDom('div')
 export const renderWalletTpl = (moneyType, count) => {
    if (count === 0) {
-      const walletMoney = div({
+      const walletMoney = makeDiv({
             value: `${moneyType}원`,
             classes: ['wallet__money-type', 'disabled']
          }) +
-         div({
+         makeDiv({
             value: count,
             classes: ['wallet__type-count']
          });
 
-      return div({
+      return makeDiv({
          value: walletMoney
       })
 
    }
-   const walletMoney = div({
+   const walletMoney = makeDiv({
          value: `${moneyType}원`,
          classes: ['wallet__money-type']
       }) +
-      div({
+      makeDiv({
          value: count,
          classes: ['wallet__type-count']
       });
 
-   return div({
+   return makeDiv({
       value: walletMoney
    })
 };
 
 export const totalWalletTpl = (totalPrice) => {
-   return div({
+   return makeDiv({
       value: `${totalPrice}원`,
       classes: ['wallet__total-money']
    })

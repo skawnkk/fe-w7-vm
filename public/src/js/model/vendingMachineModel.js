@@ -16,8 +16,7 @@ class VendingModel extends Observable {
     observers.forEach((observer) => observer(data));
   }
   getReturnObserver() {
-    return this._returnObservers;
-  }
+    return this._returnObserver
   getProductObserver() {
     return this._productObservers;
   }
