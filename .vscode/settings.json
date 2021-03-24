@@ -2,6 +2,7 @@
   "prettier.jsxSingleQuote": true,
   "prettier.printWidth": 100,
   "prettier.singleQuote": true,
+  "prettier.semi": true,
   "prettier.jsxBracketSameLine": true,
   "diffEditor.wordWrap": "off"
 }

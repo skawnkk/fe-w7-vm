@@ -23,7 +23,7 @@ class WalletView {
     
   }
   getPriceFromTarget(target) {
-    return target.innerText.slice(0, -1) * 1
+    return parseInt(target.innerText.slice(0, -1));
   }
   walletClickCbFn(money) {
     this.setWalletStatusMinus(money)
@@ -36,10 +36,11 @@ class WalletView {
   }
   setWalletStatusMinus(money) {
     const walletMoney = this.walletModel.getWalletMoney()
-    walletMoney.forEach((moneyBtn) => {
+    const newWalletMoney = walletMoney.map((moneyBtn) => {
       if (moneyBtn.type === money) moneyBtn.count--
+      return moneyBtn;
     })
-    this.walletModel.setWalletMoney(walletMoney)
+    this.walletModel.setWalletMoney(newWalletMoney)
   }
   setTotalMoney() {
     const walletMoney = this.walletModel.getWalletMoney()
