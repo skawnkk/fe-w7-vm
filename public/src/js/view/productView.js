@@ -21,8 +21,8 @@ class ProductView {
   handleClick({ target }) {
     if (!this.isChoiceableTarget(target)) return;
     this.processModel.startTimer(this.returnMoney.bind(this)); //5초 타이머 재설정
-    const choiceProduct = target.closest('.product-item').firstElementChild.innerHTML; //상품이름가져오기
-    const productInfomation = this.productModel.getProductItem(choiceProduct); //상품이름으로 infomation가져오기
+    const choiceProduct = target.closest('.product-item').firstElementChild.innerHTML; //타겟으로부터 상품 이름가져오기
+    const productInfomation = this.productModel.getProductItem(choiceProduct); //상품이름으로 infomation 가져오기
     this.processModel.productClickFn(productInfomation); //상품 클릭시 process에서 일어나는 일 (돈-- & 상품선택됐습니다 로그)
     this.productModel.minusStock(productInfomation); //상품 모델 재고 --
     this.processModel.setProductOutStatus(productInfomation); //2초 뒤,  상품이 나옵니다.
