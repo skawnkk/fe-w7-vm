@@ -55,6 +55,7 @@ export const getProductHTML = (productName, productPrice, productStock, isAvaila
   const product = makeDiv({ value: productName, classes: ['product-item__title'] });
   const price = makeDiv({ value: productPrice, classes: ['product-item__price'] });
   const productInfomation = product + price;
+
   if (productStock === 0)
     return makeDiv({ value: productInfomation, classes: ['product-item', 'unchoiceable'] });
   else

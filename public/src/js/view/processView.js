@@ -42,10 +42,12 @@ class ProcessView {
     this.processModel.setReturnStatus(money);
     this.render();
   }
-  productClickCbFn(product) {
+  async productClickCbFn(product) {
     const productItem = this.productModel.getProductItem(product);
     this.processModel.updateVendingMoney({ money: productItem.price, plus: false });
     this.processModel.setFoodStatus(productItem.name);
+    this.render();
+    await this.processModel.setProductOutStatus(product);
     this.render();
   }
   renderVendingMoney() {

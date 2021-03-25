@@ -8,8 +8,12 @@ class Observable {
   unsubscribe(observer) {
     this._observers = [...this._observers].filter((subscriber) => subscriber !== observer);
   }
-  notify(data) {
-    this._observers.forEach((observer) => observer(data));
+  async notify(data) {
+    for (const observer of this._observers) {
+      if (observer instanceof Promise) await observer(data);
+      else observer(data);
+    }
+    // this._observers.forEach((observer) => observer(data));
   }
 }
 

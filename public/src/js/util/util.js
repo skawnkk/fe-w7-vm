@@ -11,3 +11,6 @@ export const _ = {
 };
 export const createDom = (tag) => ({ value = '', classes = [] } = {}) =>
   `<${tag} class='${classes.join(' ')}'>${value}</${tag}>`;
+
+export const delay = (time, value = '') =>
+  new Promise((resolve) => setTimeout(() => resolve(value), time));

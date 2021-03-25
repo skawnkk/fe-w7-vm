@@ -1,4 +1,5 @@
 import Observable from '../observer';
+import { delay } from '../util/util';
 
 class ProcessModel extends Observable {
   constructor() {
@@ -16,15 +17,6 @@ class ProcessModel extends Observable {
   getVendingStatus() {
     return this.vendingStatus;
   }
-  // plusVendingMoney(money) {
-  //   this.setPlusMoneyStatus(money);
-  //   this.updateVendingMoney({ money, plus: true });
-  // }
-  // returnVendingMoney() {
-  //   this.returnMoneyBack(this.vendingMoney);
-  //   this.updateVendingMoney({ money: this.vendingMoney, plus: false });
-  // }
-  // minusVendingMoney()
   updateVendingMoney({ money, plus = true }) {
     plus ? (this.vendingMoney += money) : (this.vendingMoney -= money);
   }
@@ -42,6 +34,11 @@ class ProcessModel extends Observable {
     if (this.vendingStatus.length > this.maxStatus) this.vendingStatus = [];
     const foodStatus = `${food}가 선택됨`;
     this.vendingStatus.push(foodStatus);
+  }
+  async setProductOutStatus(product) {
+    await delay(2000);
+    const productStatus = `${product}가 나왔습니다.`;
+    this.vendingStatus.push(productStatus);
   }
   returnMoneyBack(money) {
     const totalReturnMoney = this.vendingMoney;
