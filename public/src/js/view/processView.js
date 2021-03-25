@@ -26,8 +26,8 @@ class ProcessView {
   }
   handleClick() {
     const money = this.processModel.getVendingMoney();
-    this.walletModel.setReturnMoneyBack(money);
-    this.processModel.processClickFn(money);
+    this.walletModel.setReturnMoneyBack(money); //wallet에 돈 ++
+    this.processModel.processClickFn(money); //자판기 돈 -- & 로그 출력
   }
   renderVendingMoney() {
     const vendingMoney = this.processModel.getVendingMoney();

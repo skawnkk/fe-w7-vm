@@ -12,9 +12,6 @@ class ProcessModel extends Observable {
   getVendingMoney() {
     return this.vendingMoney;
   }
-  setVendingMoney(money) {
-    this.vendingMoney = money;
-  }
   getVendingStatus() {
     return this.vendingStatus;
   }
