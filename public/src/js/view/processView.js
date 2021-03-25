@@ -15,9 +15,7 @@ class ProcessView {
   init() {
     this.render();
     this.addEvent();
-    this.walletModel.subscribe(this.walletClickCbFn.bind(this));
-    this.productModel.subscribe(this.productClickCbFn.bind(this));
-    this.processModel.subscribe(this.processCbFn.bind(this));
+    this.processModel.subscribe(this.render.bind(this));
   }
   addEvent() {
     _.addEvent(this.processReturnBtn, 'click', this.handleClick.bind(this));
@@ -28,24 +26,8 @@ class ProcessView {
   }
   handleClick() {
     const money = this.processModel.getVendingMoney();
-    this.processModel.notify(money);
-  }
-  walletClickCbFn(money) {
-    this.processModel.updateVendingMoney({ money, plus: true });
-    this.processModel.setPlusMoneyStatus(money);
-    this.render();
-  }
-  processCbFn(money) {
-    this.processModel.updateVendingMoney({ money, plus: false });
-    this.processModel.setReturnStatus(money);
-    this.render();
-  }
-  productClickCbFn(product) {
-    const productItem = this.productModel.getProductItem(product);
-    this.processModel.updateVendingMoney({ money: productItem.price, plus: false });
-    this.processModel.setFoodStatus(productItem.name);
-    this.render();
-    this.renderProductAfterTwoSecond(product);
+    this.walletModel.setReturnMoneyBack(money);
+    this.processModel.processClickFn(money);
   }
   renderVendingMoney() {
     const vendingMoney = this.processModel.getVendingMoney();
@@ -56,10 +38,6 @@ class ProcessView {
     const vendingStatus = this.processModel.getVendingStatus();
     const statusHTML = vendingStatus.reduce((acc, curr) => acc + getMonitorStatusHTML(curr), '');
     this.processStatusArea.innerHTML = statusHTML;
-  }
-  async renderProductAfterTwoSecond(product) {
-    await this.processModel.setProductOutStatus(product);
-    this.renderVendingStatus();
   }
 }
 

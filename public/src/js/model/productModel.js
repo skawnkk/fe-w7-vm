@@ -13,11 +13,12 @@ class ProductModel extends Observable {
       if (item.name === name) return item;
     }
   }
-  minusStock(target) {
+  minusStock(productInfomation) {
     this.products = this.products.map((item) => {
-      if (target === item.name && item.stock > 0) item.stock--;
+      if (productInfomation.name === item.name && item.stock > 0) item.stock--;
       return item;
     });
+    if (productInfomation.stock === 0) this.notify();
   }
 }
 

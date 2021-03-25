@@ -16,6 +16,7 @@ class WalletModel extends Observable {
       if (moneyBtn.type === money) moneyBtn.count--;
       return moneyBtn;
     });
+    this.notify(); //옵저버 호출
   }
   setReturnMoneyBack(money) {
     const distrubutedMoney = this.distributeMoney(money);
@@ -23,6 +24,7 @@ class WalletModel extends Observable {
       el.count += distrubutedMoney[el.type];
       return el;
     });
+    this.notify(); //옵저버 호출
   }
   distributeMoney(money) {
     const moneyType = this.walletMoney.map((el) => el.type).reverse();
