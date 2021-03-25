@@ -1,5 +1,5 @@
 //prettier-ignore
-const initMoney = (a, b, c, d, e, f, g) => {
+const initMoney = ({10:a, 50:b, 100:c, 500:d, 1000:e, 5000:f, 10000:g}) => {
    return [{
          type: 10,
          count: a
@@ -31,7 +31,7 @@ const initMoney = (a, b, c, d, e, f, g) => {
    ]
 }
 
-export const myMoney = initMoney(3, 3, 4, 5, 6, 7, 4)
+export const myMoney = initMoney({ 10: 1, 50: 3, 100: 3, 500: 4, 1000: 5, 5000: 6, 10000: 7 });
 
 export const beverage = [
   {
@@ -105,11 +105,6 @@ export const beverage = [
     stock: 10,
   },
   {
-    name: '미니 육전',
-    price: 1000,
-    stock: 10,
-  },
-  {
     name: '김치 만두 8pc',
     price: 4000,
     stock: 10,
@@ -139,4 +134,4 @@ export const beverage = [
     price: 13000,
     stock: 10,
   },
-]
+];

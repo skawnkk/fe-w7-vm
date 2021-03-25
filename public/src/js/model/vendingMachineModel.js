@@ -1,9 +1,9 @@
 import Observable from '../observer';
 
 class VendingModel extends Observable {
-  constructor(food) {
+  constructor(product) {
     super();
-    this.food = food;
+    this.product = product;
     this.vendingMoney = 0;
     this.vendingStatus = [];
     this._returnObservers = new Set();
@@ -21,14 +21,11 @@ class VendingModel extends Observable {
   getProductObserver() {
     return this._productObservers;
   }
-  getFood() {
-    return this.food;
+  getProduct() {
+    return this.product;
   }
-  setFood() {}
-  getFoodItem(food) {
-    for (const item of this.food) {
-      if (item.name === food) return item;
-    }
+  setProduct(product) {
+    this.product = product;
   }
   getVendingMoney() {
     return this.vendingMoney;
