@@ -40,13 +40,12 @@ class ProcessView {
     this.processModel.setReturnStatus(money);
     this.render();
   }
-  async productClickCbFn(product) {
+  productClickCbFn(product) {
     const productItem = this.productModel.getProductItem(product);
     this.processModel.updateVendingMoney({ money: productItem.price, plus: false });
     this.processModel.setFoodStatus(productItem.name);
     this.render();
-    await this.processModel.setProductOutStatus(product);
-    this.render();
+    this.renderProductAfterTwoSecond(product);
   }
   renderVendingMoney() {
     const vendingMoney = this.processModel.getVendingMoney();
@@ -57,6 +56,10 @@ class ProcessView {
     const vendingStatus = this.processModel.getVendingStatus();
     const statusHTML = vendingStatus.reduce((acc, curr) => acc + getMonitorStatusHTML(curr), '');
     this.processStatusArea.innerHTML = statusHTML;
+  }
+  async renderProductAfterTwoSecond(product) {
+    await this.processModel.setProductOutStatus(product);
+    this.renderVendingStatus();
   }
 }
 

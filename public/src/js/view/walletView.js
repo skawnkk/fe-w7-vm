@@ -5,7 +5,6 @@ class WalletView {
   constructor({ walletModel, processModel }) {
     this.walletModel = walletModel;
     this.processModel = processModel;
-    this.totalMoney;
     this.walletArea = _.$('.wallet');
     this.init();
   }
@@ -20,9 +19,9 @@ class WalletView {
   }
   handleClick({ target }) {
     if (!this.isMoneyBtn(target)) return;
-    this.processModel.startTimer();
-    const money = this.getPriceFromTarget(target);
-    this.walletModel.notify(money);
+    this.processModel.startTimer(); //5초 타이머 재설정
+    const money = this.getPriceFromTarget(target); //타겟 el로부터 money 가져오기
+    this.walletModel.notify(money); //옵저버 호출
   }
   getPriceFromTarget(target) {
     return parseInt(target.innerText.slice(0, -1));

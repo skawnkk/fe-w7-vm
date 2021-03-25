@@ -41,10 +41,6 @@ class ProductView {
   isChoiceable(price, vendingMoney) {
     return price <= vendingMoney;
   }
-  isProductItem(target) {
-    const targetParent = target.parentElement;
-    return targetParent.classList.contains('product-item');
-  }
   isChoiceableTarget(target) {
     const parentTarget = target.closest('.product-item');
     return parentTarget.classList.contains('choiceable');
