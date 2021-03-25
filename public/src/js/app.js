@@ -11,5 +11,5 @@ const productModel = new ProductModel(beverage);
 const processModel = new ProcessModel();
 
 const processView = new ProcessView({ walletModel, processModel, productModel });
-// const productView = new ProductView({ walletModel, processModel, productModel });
+const productView = new ProductView({ walletModel, processModel, productModel });
 const walletView = new WalletView({ walletModel, processModel });

@@ -1,15 +1,18 @@
 import Observable from '../observer';
 
 class ProductModel extends Observable {
-  constructor(product) {
+  constructor(products) {
     super();
-    this.product = product;
+    this.products = products;
   }
   getProduct() {
-    return this.product;
+    return this.products;
   }
-  setProduct(product) {
-    this.product = product;
+  minusStock(target) {
+    this.products = this.products.map((item) => {
+      if (target === item.name && item.stock > 0) item.stock--;
+      return item;
+    });
   }
 }
 
