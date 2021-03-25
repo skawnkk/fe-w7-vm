@@ -1,13 +1,15 @@
 import WalletModel from './model/walletModel';
-import VendingModel from './model/vendingMachineModel';
-import MonitorView from './view/monitorView';
+import ProductModel from './model/productModel';
+import ProcessModel from './model/processModel';
 import ProductView from './view/productView';
 import WalletView from './view/walletView';
+import ProcessView from './view/processView';
 import { myMoney, beverage } from './dataSetting';
 
 const walletModel = new WalletModel(myMoney);
-const vendingModel = new VendingModel(beverage);
+const productModel = new ProductModel(beverage);
+const processModel = new ProcessModel();
 
-const monitorView = new MonitorView({ walletModel, vendingModel });
-const productView = new ProductView({ walletModel, vendingModel });
-const walletView = new WalletView({ walletModel, vendingModel });
+const processView = new ProcessView({ walletModel, processModel, productModel });
+const productView = new ProductView({ walletModel, processModel, productModel });
+const walletView = new WalletView({ walletModel, processModel });

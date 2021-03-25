@@ -1,8 +1,8 @@
-.monitor {
+.process {
   border: 1px solid black;
   padding-top: 20px;
 
-  .monitor-money {
+  .process-money {
     text-align: center;
     line-height: 50px;
     margin: 10px 20px;
@@ -13,7 +13,7 @@
     margin-bottom: 20px;
     border: 1px solid black;
   }
-  .monitor-btn {
+  .process-btn {
     text-align: center;
     font-size: 1.5rem;
     font-weight: 600;
@@ -24,13 +24,13 @@
     border: 1px solid black;
     margin-bottom: 20px;
   }
-  .monitor-status {
+  .process-status {
     margin: 10px 20px;
     padding: 10px;
     width: 260px;
     height: 300px;
     border: 1px solid black;
-    .monitor-status__line {
+    .process-status__line {
       margin-bottom: 5px;
     }
   }
