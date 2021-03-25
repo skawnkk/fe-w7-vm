@@ -20,9 +20,9 @@ class ProductView {
     _.addEvent(this.vendingMenuArea, 'click', this.handleClick.bind(this));
   }
   handleClick({ target }) {
+    if (!this.isChoiceableTarget(target)) return;
     const choiceProduct = target.closest('.product-item').firstElementChild.innerHTML;
-    this.productModel.minusStock(choiceProduct);
-    this.render();
+    this.productModel.notify(choiceProduct);
   }
   render() {
     const productInfomations = this.productModel.getProduct();
@@ -34,11 +34,19 @@ class ProductView {
     this.vendingMenuArea.innerHTML = productHTML;
   }
   productCbFn(product) {
-    this.minusStock(product);
+    this.productModel.minusStock(product);
     this.render();
   }
   isChoiceable(price, vendingMoney) {
     return price <= vendingMoney;
+  }
+  isProductItem(target) {
+    const targetParent = target.parentElement;
+    return targetParent.classList.contains('product-item');
+  }
+  isChoiceableTarget(target) {
+    const parentTarget = target.closest('.product-item');
+    return parentTarget.classList.contains('choiceable');
   }
 }
 

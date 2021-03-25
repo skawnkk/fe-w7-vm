@@ -42,10 +42,10 @@ class ProcessView {
     this.processModel.setReturnStatus(money);
     this.render();
   }
-  productClickCbFn(food) {
-    const foodItem = this.processModel.getFoodItem(food);
-    this.processModel.updateVendingMoney({ money: foodItem.price, plus: false });
-    this.processModel.setFoodStatus(food);
+  productClickCbFn(product) {
+    const productItem = this.productModel.getProductItem(product);
+    this.processModel.updateVendingMoney({ money: productItem.price, plus: false });
+    this.processModel.setFoodStatus(productItem.name);
     this.render();
   }
   renderVendingMoney() {

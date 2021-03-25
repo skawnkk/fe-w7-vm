@@ -8,6 +8,11 @@ class ProductModel extends Observable {
   getProduct() {
     return this.products;
   }
+  getProductItem(name) {
+    for (const item of this.products) {
+      if (item.name === name) return item;
+    }
+  }
   minusStock(target) {
     this.products = this.products.map((item) => {
       if (target === item.name && item.stock > 0) item.stock--;
