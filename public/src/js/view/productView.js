@@ -21,6 +21,7 @@ class ProductView {
   }
   handleClick({ target }) {
     if (!this.isChoiceableTarget(target)) return;
+    this.processModel.startTimer();
     const choiceProduct = target.closest('.product-item').firstElementChild.innerHTML;
     this.productModel.notify(choiceProduct);
   }

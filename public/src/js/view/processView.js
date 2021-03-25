@@ -29,8 +29,6 @@ class ProcessView {
   handleClick() {
     const money = this.processModel.getVendingMoney();
     this.processModel.notify(money);
-    // this.processModel.setReturnStatus();
-    // const vendingMoney = this.processModel.getVendingMoney();
   }
   walletClickCbFn(money) {
     this.processModel.updateVendingMoney({ money, plus: true });

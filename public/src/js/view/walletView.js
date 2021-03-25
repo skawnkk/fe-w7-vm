@@ -20,6 +20,7 @@ class WalletView {
   }
   handleClick({ target }) {
     if (!this.isMoneyBtn(target)) return;
+    this.processModel.startTimer();
     const money = this.getPriceFromTarget(target);
     this.walletModel.notify(money);
   }

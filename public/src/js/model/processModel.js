@@ -7,6 +7,7 @@ class ProcessModel extends Observable {
     this.vendingMoney = 0;
     this.vendingStatus = [];
     this.maxStatus = 10;
+    this.timer = null;
   }
   getVendingMoney() {
     return this.vendingMoney;
@@ -45,6 +46,10 @@ class ProcessModel extends Observable {
     this.vendingMoney = 0;
 
     this.notify(totalReturnMoney);
+  }
+  startTimer() {
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => this.notify(this.vendingMoney), 5000);
   }
 }
 
