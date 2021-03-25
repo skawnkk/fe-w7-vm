@@ -16,7 +16,7 @@ class ProductView {
     const returnObserver = this.vendingModel.getReturnObserver();
     this.vendingModel.subscribe(returnObserver, this.changeChoiceable.bind(this));
     const productObserver = this.vendingModel.getProductObserver();
-    this.vendingModel.subscribe(productObserver, this.productClickCbFn.bind(this));
+    this.vendingModel.subscribe(this.processCbFn.bind(this));
   }
   addEvent() {
     _.addEvent(this.vendingMenuArea, 'click', this.handleClick.bind(this));
@@ -39,7 +39,7 @@ class ProductView {
     );
     this.vendingMenuArea.innerHTML = productHTML;
   }
-  productClickCbFn(target) {
+  processCbFn(target) {
     this.minusStock(target);
     this.render();
   }

@@ -13,4 +13,4 @@ class ProductModel extends Observable {
   }
 }
 
-export default VendingModel;
+export default ProductModel;

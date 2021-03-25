@@ -6,10 +6,36 @@ class WalletModel extends Observable {
     this.walletMoney = myMoney;
   }
   getWalletMoney() {
-    return this.walletMoney
+    return this.walletMoney;
   }
   setWalletMoney(money) {
     this.walletMoney = money;
+  }
+  setWalletStatusMinus(money) {
+    this.walletMoney = this.walletMoney.map((moneyBtn) => {
+      if (moneyBtn.type === money) moneyBtn.count--;
+      return moneyBtn;
+    });
+  }
+  setReturnMoneyBack(money) {
+    const distrubutedMoney = this.distributeMoney(money);
+    this.walletMoney = this.walletMoney.map((el) => {
+      el.count += distrubutedMoney[el.type];
+      return el;
+    });
+  }
+  distributeMoney(money) {
+    const moneyType = this.walletMoney.map((el) => el.type).reverse();
+    const distrubuted = {};
+    moneyType.forEach((moneyType) => {
+      const changeCount = Math.floor(money / moneyType);
+      distrubuted[moneyType] = changeCount;
+      money -= moneyType * changeCount;
+    });
+    return distrubuted;
+  }
+  getTotalMoney() {
+    return this.walletMoney.reduce((acc, curr) => acc + curr.type * curr.count, 0);
   }
 }
 

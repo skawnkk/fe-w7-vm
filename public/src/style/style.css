@@ -152,10 +152,10 @@ input {
     .products .product-item.unchoiceable {
       background-color: rgba(0, 0, 0, 0.3); }
 
-.monitor {
+.process {
   border: 1px solid black;
   padding-top: 20px; }
-  .monitor .monitor-money {
+  .process .process-money {
     text-align: center;
     line-height: 50px;
     margin: 10px 20px;
@@ -165,7 +165,7 @@ input {
     height: 50px;
     margin-bottom: 20px;
     border: 1px solid black; }
-  .monitor .monitor-btn {
+  .process .process-btn {
     text-align: center;
     font-size: 1.5rem;
     font-weight: 600;
@@ -175,13 +175,13 @@ input {
     height: 50px;
     border: 1px solid black;
     margin-bottom: 20px; }
-  .monitor .monitor-status {
+  .process .process-status {
     margin: 10px 20px;
     padding: 10px;
     width: 260px;
     height: 300px;
     border: 1px solid black; }
-    .monitor .monitor-status .monitor-status__line {
+    .process .process-status .process-status__line {
       margin-bottom: 5px; }
 
 .wallet {
