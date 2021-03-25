@@ -18,6 +18,21 @@ class ProcessModel extends Observable {
   getVendingStatus() {
     return this.vendingStatus;
   }
+  walletClickFn(money) {
+    this.updateVendingMoney({ money, plus: true });
+    this.setPlusMoneyStatus(money);
+    this.notify(); //프로세스 & 프로덕트 렌더링
+  }
+  processClickFn(money) {
+    this.updateVendingMoney({ money, plus: false });
+    this.setReturnStatus(money);
+    this.notify(); //프로세스 & 프로덕트 렌더링
+  }
+  productClickFn(productInfomation) {
+    this.updateVendingMoney({ money: productInfomation.price, plus: false });
+    this.setFoodStatus(productInfomation.name);
+    this.notify(); //프로세스 & 프로덕트 렌더링
+  }
   updateVendingMoney({ money, plus = true }) {
     plus ? (this.vendingMoney += money) : (this.vendingMoney -= money);
   }
@@ -36,20 +51,16 @@ class ProcessModel extends Observable {
     const foodStatus = `${food}가 선택됨`;
     this.vendingStatus.push(foodStatus);
   }
-  async setProductOutStatus(product) {
+  //2초뒤 상품이 나왔습니다 상태 설정 & 옵저버호출
+  async setProductOutStatus(productInfomation) {
     await delay(2000);
-    const productStatus = `${product}가 나왔습니다.`;
+    const productStatus = `${productInfomation.name}가 나왔습니다.`;
     this.vendingStatus.push(productStatus);
+    this.notify();
   }
-  returnMoneyBack(money) {
-    const totalReturnMoney = this.vendingMoney;
-    this.vendingMoney = 0;
-
-    this.notify(totalReturnMoney);
-  }
-  startTimer() {
+  startTimer(fn) {
     clearTimeout(this.timer);
-    this.timer = setTimeout(() => this.notify(this.vendingMoney), 5000);
+    this.timer = setTimeout(() => fn(), 5000);
   }
 }
 
