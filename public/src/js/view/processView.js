@@ -22,7 +22,7 @@ class ProcessView {
   }
   handleClick() {
     const money = this.processModel.getVendingMoney();
-    this.walletModel.setReturnMoneyBack(money); //wallet에 돈 ++
+    this.walletModel.setWalletMoneyPlus(money); //wallet에 돈 ++
     this.processModel.updateVendingMoney({ money, plus: false }); //자판기 돈 --
     this.logModel.setLog({ value: money, type: 'moneyReturn' });
   }

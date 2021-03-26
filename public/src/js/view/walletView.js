@@ -21,7 +21,7 @@ class WalletView {
     if (!this.isMoneyBtn(target)) return;
     this.processModel.startTimer(this.returnMoney.bind(this)); //5초 타이머 재설정
     const money = this.getPriceFromTarget(target); //타겟 el로부터 money 가져오기
-    this.walletModel.setWalletStatusMinus(money); //지갑돈 --
+    this.walletModel.setWalletMoneyMinus(money); //지갑돈 --
     this.processModel.updateVendingMoney({ money, plue: true }); //process 돈 ++
     this.logModel.setLog({ value: money, type: 'moneyInsert' });
   }
@@ -41,7 +41,7 @@ class WalletView {
     this.walletArea.innerHTML = walletStatusTpl;
   }
   renderTotalMoney() {
-    const totalMoney = this.walletModel.getTotalMoney();
+    const totalMoney = this.walletModel.getWalletTotalMoney();
     const TotalMoneyTpl = totalWalletTpl(totalMoney);
     this.walletArea.innerHTML += TotalMoneyTpl;
   }
@@ -50,7 +50,7 @@ class WalletView {
   }
   returnMoney() {
     const money = this.processModel.getVendingMoney();
-    this.walletModel.setReturnMoneyBack(money);
+    this.walletModel.setWalletMoneyPlus(money);
     this.processModel.updateVendingMoney({ money, plus: false });
     this.logModel.setLog({ value: money, type: 'moneyReturn' });
   }
