@@ -1,5 +1,4 @@
-import { getMonitorMoneyHTML, getMonitorStatusHTML } from '../htmlTemplate';
-import WalletModel from '../model/walletModel';
+import { getMonitorMoneyHTML } from '../htmlTemplate';
 import { _ } from '../util/util.js';
 
 class ProcessView {
