@@ -23,10 +23,10 @@ class ProductView {
     if (!this.isChoiceableTarget(target)) return;
     this.processModel.startTimer(this.returnMoney.bind(this)); //5초 타이머 재설정
     const choiceProduct = target.closest('.product-item').firstElementChild.innerHTML; //타겟으로부터 상품 이름가져오기
-    const productInfomation = this.productModel.getProductItem(choiceProduct); //상품이름으로 infomation 가져오기
+    const productInfomation = this.productModel.getTargetProduct(choiceProduct); //상품이름으로 infomation 가져오기
     this.processModel.updateVendingMoney({ money: productInfomation.price, plus: false }); //자판기 돈 --
     this.logModel.setLog({ value: productInfomation, type: 'productSelect' });
-    this.productModel.minusStock(productInfomation); //상품 모델 재고 --
+    this.productModel.setStockMinus(productInfomation); //상품 모델 재고 --
     this.logModel.setDelayLog({ value: productInfomation, type: 'productOut' });
   }
   render() {
