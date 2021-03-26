@@ -1,5 +1,4 @@
 import Observable from '../observer';
-import { delay } from '../util/util';
 
 class ProcessModel extends Observable {
   constructor() {

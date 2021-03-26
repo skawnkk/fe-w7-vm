@@ -19,11 +19,11 @@ class WalletView {
   }
   handleClick({ target }) {
     if (!this.isMoneyBtn(target)) return;
-    this.processModel.startTimer(this.returnMoney.bind(this)); //5초 타이머 재설정
     const money = this.getPriceFromTarget(target); //타겟 el로부터 money 가져오기
     this.walletModel.setWalletMoneyMinus(money); //지갑돈 --
     this.processModel.updateVendingMoney({ money, plue: true }); //process 돈 ++
     this.logModel.setLog({ value: money, type: 'moneyInsert' });
+    this.processModel.startTimer(this.returnMoney.bind(this)); //5초 타이머 재설정
   }
   getPriceFromTarget(target) {
     return parseInt(target.innerText.slice(0, -1));
