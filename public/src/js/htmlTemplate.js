@@ -48,8 +48,7 @@ export const totalWalletTpl = (totalPrice) => {
 export const getMonitorMoneyHTML = (price) =>
   makeSpan({ value: price, classes: ['monitor-money__price'] }) + makeSpan({ value: '원' });
 
-export const getMonitorStatusHTML = (status) =>
-  makeDiv({ value: status, classes: ['monitor-status__line'] });
+export const getLogHTML = (log) => makeDiv({ value: log, classes: ['monitor-status__line'] });
 
 export const getProductHTML = (productName, productPrice, productStock, isAvailable) => {
   const product = makeDiv({ value: productName, classes: ['product-item__title'] });
