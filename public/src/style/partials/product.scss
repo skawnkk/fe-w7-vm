@@ -10,7 +10,7 @@
     text-align: center;
     margin-right: 10px;
     border: 1px solid black;
-
+    cursor: pointer;
     .product-item__title {
       border-bottom: 1px solid black;
       line-height: 40px;
@@ -25,5 +25,8 @@
     &.unchoiceable {
       background-color: rgba(0, 0, 0, 0.3);
     }
+  }
+  .product-item:hover {
+    background-color: rgba(0, 0, 0, 0.3);
   }
 }

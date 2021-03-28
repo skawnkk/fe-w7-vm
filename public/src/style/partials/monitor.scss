@@ -23,6 +23,10 @@
     height: 50px;
     border: 1px solid black;
     margin-bottom: 20px;
+    cursor: pointer;
+  }
+  .process-btn:hover {
+    background-color: rgba(0, 0, 0, 0.3);
   }
   .process-status {
     margin: 10px 20px;

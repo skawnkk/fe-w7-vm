@@ -2,7 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-/* line 6, public/src/style/config/reset.scss */
 html,
 body,
 div,
@@ -92,7 +91,6 @@ video {
   vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
-/* line 95, public/src/style/config/reset.scss */
 article,
 aside,
 details,
@@ -106,21 +104,17 @@ nav,
 section {
   display: block; }
 
-/* line 108, public/src/style/config/reset.scss */
 body {
   line-height: 1; }
 
-/* line 111, public/src/style/config/reset.scss */
 ol,
 ul {
   list-style: none; }
 
-/* line 115, public/src/style/config/reset.scss */
 blockquote,
 q {
   quotes: none; }
 
-/* line 119, public/src/style/config/reset.scss */
 blockquote:before,
 blockquote:after,
 q:before,
@@ -128,49 +122,42 @@ q:after {
   content: '';
   content: none; }
 
-/* line 126, public/src/style/config/reset.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 131, public/src/style/config/reset.scss */
 input {
   outline: none; }
 
-/* line 1, public/src/style/partials/product.scss */
 .products {
   display: grid;
   border: 1px solid black;
   grid-template-columns: repeat(4, 1fr);
   padding: 20px;
   align-items: center; }
-  /* line 7, public/src/style/partials/product.scss */
   .products .product-item {
     width: 150px;
     height: 70px;
     text-align: center;
     margin-right: 10px;
-    border: 1px solid black; }
-    /* line 14, public/src/style/partials/product.scss */
+    border: 1px solid black;
+    cursor: pointer; }
     .products .product-item .product-item__title {
       border-bottom: 1px solid black;
       line-height: 40px;
       height: 40px; }
-    /* line 19, public/src/style/partials/product.scss */
     .products .product-item .product-item__price {
       line-height: 30px; }
-    /* line 22, public/src/style/partials/product.scss */
     .products .product-item.choiceable {
       border: 2px solid red; }
-    /* line 25, public/src/style/partials/product.scss */
     .products .product-item.unchoiceable {
       background-color: rgba(0, 0, 0, 0.3); }
+  .products .product-item:hover {
+    background-color: rgba(0, 0, 0, 0.3); }
 
-/* line 1, public/src/style/partials/monitor.scss */
 .process {
   border: 1px solid black;
   padding-top: 20px; }
-  /* line 5, public/src/style/partials/monitor.scss */
   .process .process-money {
     text-align: center;
     line-height: 50px;
@@ -181,7 +168,6 @@ input {
     height: 50px;
     margin-bottom: 20px;
     border: 1px solid black; }
-  /* line 16, public/src/style/partials/monitor.scss */
   .process .process-btn {
     text-align: center;
     font-size: 1.5rem;
@@ -191,76 +177,69 @@ input {
     width: 260px;
     height: 50px;
     border: 1px solid black;
-    margin-bottom: 20px; }
-  /* line 27, public/src/style/partials/monitor.scss */
+    margin-bottom: 20px;
+    cursor: pointer; }
+  .process .process-btn:hover {
+    background-color: rgba(0, 0, 0, 0.3); }
   .process .process-status {
     margin: 10px 20px;
     padding: 10px;
     width: 260px;
     height: 300px;
     border: 1px solid black; }
-    /* line 33, public/src/style/partials/monitor.scss */
     .process .process-status .process-status__line {
       margin-bottom: 5px; }
 
-/* line 1, public/src/style/partials/wallet.scss */
 .wallet {
   border: 1px solid black;
   height: 500px;
-  width: 130px;
+  width: 150px;
   display: flex;
   flex-direction: column;
   align-items: center; }
-  /* line 8, public/src/style/partials/wallet.scss */
   .wallet div {
     border-radius: 5px; }
-  /* line 11, public/src/style/partials/wallet.scss */
   .wallet > div {
     display: flex;
     padding: 10px; }
-    /* line 14, public/src/style/partials/wallet.scss */
     .wallet > div .wallet__money-type {
       text-align: center;
       line-height: 30px;
       width: 70px;
       height: 30px;
       margin-right: 10px;
-      border: 1px solid black; }
-    /* line 22, public/src/style/partials/wallet.scss */
+      border: 1px solid black;
+      cursor: pointer; }
+    .wallet > div .wallet__money-type:hover {
+      background-color: rgba(0, 0, 0, 0.3); }
     .wallet > div .wallet__type-count {
       text-align: center;
       line-height: 30px;
       width: 50px;
       height: 30px;
       border: 1px solid black; }
-  /* line 30, public/src/style/partials/wallet.scss */
   .wallet .wallet__total-money {
     padding: 0;
     width: 100px;
     height: 40px;
-    text-align: center;
+    padding-left: 14px;
     line-height: 40px;
     border: 1px solid black; }
 
-/* line 40, public/src/style/partials/wallet.scss */
 .disabled {
   background-color: rgba(0, 0, 0, 0.3);
   pointer-events: none; }
 
-/* line 6, public/src/style/style.scss */
 * {
   box-sizing: border-box; }
 
-/* line 10, public/src/style/style.scss */
 body {
   padding: 50px; }
 
-/* line 14, public/src/style/style.scss */
 .container {
   display: flex;
   height: 500px; }
 
-/* line 19, public/src/style/style.scss */
 .vending-machine {
   display: flex;
   border: 3px solid black;

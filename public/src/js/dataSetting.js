@@ -120,7 +120,7 @@ export const beverage = [
     stock: 10,
   },
   {
-    name: '알리오 올리오 파스타',
+    name: '알리오 올리오',
     price: 10000,
     stock: 10,
   },
